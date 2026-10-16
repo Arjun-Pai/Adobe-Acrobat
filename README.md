@@ -1,4 +1,5 @@
 # Simple Acrobat
+<img width="1200" height="750" alt="image" src="https://github.com/user-attachments/assets/5ae5d8b3-7c2d-4750-b6ab-79a003e70845" />
 
 A simple Adobe Acrobat style PDF app written in **one Python file** (`acrobat.py`, about 4,050 lines, no comments). Run it and a Tkinter window opens. It works on Windows, Mac and Linux.
 
