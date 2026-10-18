@@ -1,55 +1,31 @@
 # Simple Acrobat
-<img width="1200" height="750" alt="image" src="https://github.com/user-attachments/assets/5ae5d8b3-7c2d-4750-b6ab-79a003e70845" />
 
-A simple Adobe Acrobat style PDF app written in **one Python file** (`acrobat.py`, about 4,050 lines, no comments). Run it and a Tkinter window opens. It works on Windows, Mac and Linux.
+<img width="1200" height="750" alt="screenshot" src="https://github.com/user-attachments/assets/5ae5d8b3-7c2d-4750-b6ab-79a003e70845" />
 
-## Features
+A PDF app that works a bit like Adobe Acrobat. It's one Python file (`acrobat.py`, about 4,000 lines) and opens a Tkinter window. Works on Windows, Mac and Linux.
 
-**Read**
-- Continuous scrolling, zoom (25% to 800%), fit width, fit page, full screen
-- Page thumbnails, bookmarks panel, clickable links
-- Find text across the whole document, select and copy text
+## What it can do
 
-**Comment**
-- Highlight, underline, strikethrough, squiggly underline
-- Sticky notes, text boxes, freehand drawing, rectangles, ovals, lines, arrows
-- Stamps (Approved, Draft, Confidential and more, or your own text)
-- Comments panel to jump to, edit or delete any comment
-
-**Edit**
-- Edit a line of text, add new text, add images, add links
-- Organize pages: move, rotate, duplicate, insert blank, delete, extract
-- Insert pages from another PDF, crop, header and footer, page numbers, watermark, background color
-- Edit bookmarks and document properties
-- Undo and redo
-
-**Forms and signing**
-- Fill form fields, create text fields and check boxes
-- Sign by drawing, typing or using a picture of your signature
-
-**Tools**
-- Merge, split, compress, password protect (AES-256), remove password
-- Redact (mark, then apply to remove content for good)
-- OCR to make scanned pages searchable
-- Compare two PDFs
-- Flatten comments and forms, remove hidden information
-
-**Create and export**
-- Create a PDF from images or a text file, or start a blank one
-- Export pages as PNG, export text, HTML or a Word document, extract pictures
-- Print
+- **Read:** scroll through pages, zoom, thumbnails, bookmarks, clickable links, search and copy text
+- **Comment:** highlight, underline, strikethrough, sticky notes, text boxes, drawing, shapes, arrows, stamps
+- **Edit:** change a line of text, add text, images and links, and organize pages (move, rotate, delete, extract, insert, crop)
+- **Page extras:** header and footer, page numbers, watermark, background color, bookmarks, document properties
+- **Forms and signing:** fill forms, make text fields and check boxes, sign by drawing, typing or with an image
+- **Tools:** merge, split, compress, password protect and remove password, redact, OCR, compare two PDFs, flatten comments and forms
+- **Create and export:** make a PDF from images or a text file, export pages as PNG, export text, HTML or Word, print
+- Undo and redo work for most things
 
 ## Install
 
-You need Python 3.8 or newer (Tkinter comes with most Python installs).
+You need Python 3.8+ (Tkinter comes with most installs).
 
 ```
 pip install pymupdf pypdf pillow reportlab python-docx pytesseract
 ```
 
-OCR also needs the Tesseract program installed on your computer: https://github.com/tesseract-ocr/tesseract
+OCR also needs Tesseract installed on your computer: https://github.com/tesseract-ocr/tesseract
 
-If `reportlab`, `python-docx` or `pytesseract` are missing, the app still starts and only those features show a message.
+If `reportlab`, `python-docx` or `pytesseract` are missing, the app still starts. Only those features will show a message.
 
 ## Run
 
@@ -57,39 +33,44 @@ If `reportlab`, `python-docx` or `pytesseract` are missing, the app still starts
 python acrobat.py
 ```
 
-To open a file straight away:
+To open a file right away:
 
 ```
 python acrobat.py myfile.pdf
 ```
 
-## Quick guide
+## How to use it
 
-1. Open a PDF with **File > Open** (Ctrl+O).
-2. Pick a tool in the toolbar (Hand, Select, Edit Text, Highlight, Note, Text Box, Draw, Redact) or use the **Comment** and **Tools** menus.
-3. Drag on the page to use the tool. Press **Esc** to go back to the Hand tool.
-4. Save with Ctrl+S. Undo with Ctrl+Z.
+1. Open a PDF with Ctrl+O.
+2. Pick a tool from the toolbar or the Comment and Tools menus.
+3. Drag on the page to use it. Esc goes back to the Hand tool.
+4. Save with Ctrl+S, undo with Ctrl+Z.
 
-Press **Help > Keyboard Shortcuts** inside the app for the full list. On a Mac, use Command instead of Ctrl.
+Help > Keyboard Shortcuts has the full list. On Mac use Command instead of Ctrl.
 
 ## Libraries
 
-| Library | Used for |
+| Library | What I used it for |
 | --- | --- |
-| tkinter | The window and all dialogs |
+| tkinter | The window and dialogs |
 | PyMuPDF | Showing pages, comments, text editing, redaction, forms, saving |
 | pypdf | Merging files |
-| Pillow | Turning pages into pictures for the screen, signatures |
-| reportlab | Creating a PDF from a text file |
-| python-docx | Exporting to Word |
+| Pillow | Turning pages into images, signatures |
+| reportlab | Making a PDF from a text file |
+| python-docx | Word export |
 | pytesseract | OCR |
+
+## AI usage
+
+I wrote the app myself: the Tkinter window, the layout, the toolbar and menus, and how everything fits together. AI helped me with the PDF side only. That means which functions to call in PyMuPDF and pypdf, which modules to use, and how to use them.
 
 ## Limits
 
-This is a learning project, not the real Adobe Acrobat. It does not have:
-- Adobe Sign, cloud storage, or AI features
+This is a learning project, not the real Adobe Acrobat. It doesn't have:
+
+- Adobe Sign, cloud storage or AI features
 - Certificate based digital signatures
 - Accessibility checking or JavaScript in forms
-- Several documents open in tabs (one document at a time)
+- Multiple documents in tabs (one at a time)
 
-Editing text uses standard fonts, so the new text may look slightly different from the original. Word export keeps text only, not layout or pictures.
+Text editing uses standard fonts, so new text can look a bit different from the original. Word export keeps text only, not layout or pictures.
